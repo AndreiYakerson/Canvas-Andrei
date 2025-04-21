@@ -9,4 +9,7 @@ var gBrush = {
     size: 5,
     shape: 'square'
 }
+function changeColor(value) {
+    gBrush.color = value
+}
 
