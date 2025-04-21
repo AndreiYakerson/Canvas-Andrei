@@ -5,12 +5,14 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d')
 
     resizeCanvas()
+    
 }
 
-function resizeCanvas() { 
-    const elContainer = document.querySelector('.canvas-container') 
-    gElCanvas.width = elContainer.clientWidth 
-} 
+function resizeCanvas() {
+    const elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.clientWidth
+}
+
 function drawRect(x, y) {
     gCtx.beginPath()
     gCtx.strokeStyle = gBrush.color
@@ -30,12 +32,30 @@ function drawCircle(x,y) {
     gCtx.fillStyle = gBrush.color
     gCtx.fill()
 }
+
+function onDown(ev) {
+    const { offsetX, offsetY } = ev
+
+    if (gBrush.shape === 'square') drawRect(offsetX - (gBrush.size / 2), offsetY - (gBrush.size / 2))
+    else drawCircle(offsetX,offsetY)
+}
+
+function onDraw() {
+
+}
+
+function onUp() {
+
+}
+
 function onClearCanvas() {
     gCtx.clearRect(0,0,gElCanvas.width,gElCanvas.height)
 }
+
 function onSetSize(value) {
     changeSize(value)
 }
+
 function onSetColor(value) {
     changeColor(value)
 }
