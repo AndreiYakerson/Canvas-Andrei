@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.settings-container {
+    gap: 20px;
+}
+
+.canvas-container {
+    width: 90%;
+}
+
+canvas {
+    border: solid 2px black;
+}
