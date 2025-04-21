@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="flex align-items" onload="onInit()">
+<body class="flex align-items" onload="onInit()" onresize="resizeCanvas()">
     <h1>Mister Canvas</h1>
 
     <section class="settings-container flex">
@@ -30,9 +31,13 @@
     </section>
 
     <section class="canvas-container flex justify-content">
-        <canvas width="400" height="400"></canvas> 
+        <canvas width="400" height="400" 
+        onmousedown="onDown(event)"
+        onmouseup="onUp()"
+        onmousemove="onDraw(event)"> >
+        </canvas>
     </section>
-    
+
 
     <script src="js/service.js"></script>
     <script src="js/controller.js"></script>
