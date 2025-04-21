@@ -15,4 +15,9 @@ function changeSize(value) {
 function changeColor(value) {
     gBrush.color = value
 }
+function changeShape(value) {
+    gBrush.shape = value
+    console.log(value);
+    
+}
 

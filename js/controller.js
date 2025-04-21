@@ -17,3 +17,8 @@ function onSetSize(value) {
 function onSetColor(value) {
     changeColor(value)
 }
+
+function onSetShape(value) {
+    changeShape(value)
+}
+
