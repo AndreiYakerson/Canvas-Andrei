@@ -21,6 +21,9 @@ function changeColor(value) {
 function changeShape(value) {
     gBrush.shape = value
     console.log(value);
-    
+}
+
+function changeIsMouseDown(status) {
+    gIsMouseDown = status
 }
 

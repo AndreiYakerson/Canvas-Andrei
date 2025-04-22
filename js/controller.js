@@ -34,18 +34,19 @@ function drawCircle(x,y) {
 }
 
 function onDown(ev) {
+    changeIsMouseDown(true)
+}
+
+function onDraw(ev) {
     const { offsetX, offsetY } = ev
 
+    if (!gIsMouseDown) return
     if (gBrush.shape === 'square') drawRect(offsetX - (gBrush.size / 2), offsetY - (gBrush.size / 2))
     else drawCircle(offsetX,offsetY)
 }
 
-function onDraw() {
-
-}
-
 function onUp() {
-
+    changeIsMouseDown(false)
 }
 
 function onClearCanvas() {
