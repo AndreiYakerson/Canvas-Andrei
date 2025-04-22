@@ -37,6 +37,11 @@
         onmousemove="onDraw(event)"> >
         </canvas>
     </section>
+
+    <div class="upload-container">
+        <label for="upload">Background photo:</label>
+        <input id="upload" type="file" onchange="onImgInput(event)">
+    </div>
     <a href="#" onclick="onDownloadCanvas(this)" download="Canvas">Download</a>
 
 
