@@ -5,7 +5,7 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d')
 
     resizeCanvas()
-    
+
 }
 
 function resizeCanvas() {
@@ -23,9 +23,9 @@ function drawRect(x, y) {
     gCtx.fill()
 }
 
-function drawCircle(x,y) {
+function drawCircle(x, y) {
     gCtx.beginPath()
-    gCtx.arc(x,y,gBrush.size,0,2 * Math.PI)
+    gCtx.arc(x, y, gBrush.size, 0, 2 * Math.PI)
     gCtx.strokeStyle = gBrush.color
     gCtx.stroke()
 
@@ -42,7 +42,16 @@ function onDraw(ev) {
 
     if (!gIsMouseDown) return
     if (gBrush.shape === 'square') drawRect(offsetX - (gBrush.size / 2), offsetY - (gBrush.size / 2))
-    else drawCircle(offsetX,offsetY)
+    else drawCircle(offsetX, offsetY)
+}
+
+function onTouchDraw(ev) {
+    ev.preventDefault()
+    const x = ev.changedTouches[0].pageX - ev.target.offsetLeft - ev.target.clientLeft
+    const y = ev.changedTouches[0].pageY - ev.target.offsetTop - ev.target.clientTop
+    
+    if (gBrush.shape === 'square') drawRect(x - (gBrush.size / 2), y - (gBrush.size / 2))
+    else drawCircle(x, y)
 }
 
 function onUp() {
@@ -50,7 +59,7 @@ function onUp() {
 }
 
 function onClearCanvas() {
-    gCtx.clearRect(0,0,gElCanvas.width,gElCanvas.height)
+    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
 }
 
 function onSetSize(value) {
@@ -66,7 +75,7 @@ function onSetShape(value) {
 }
 
 function onDownloadCanvas(el) {
-    const dataUrl = gElCanvas.toDataURL()
+    const dataUrl = gElCanvas.toDataURL('image/jpeg')
     el.href = dataUrl
 }
 

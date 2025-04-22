@@ -34,10 +34,13 @@
         <canvas width="400" height="400" 
         onmousedown="onDown()"
         onmouseup="onUp()"
-        onmousemove="onDraw(event)"> >
+        onmousemove="onDraw(event)"
+        ontouchstart="onDown()"
+        ontouchmove="onTouchDraw(event)"
+        ontouchend="onUp()"> >
         </canvas>
     </section>
-
+    
     <div class="upload-container">
         <label for="upload">Background photo:</label>
         <input id="upload" type="file" onchange="onImgInput(event)">
