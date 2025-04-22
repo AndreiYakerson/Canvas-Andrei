@@ -65,3 +65,8 @@ function onSetShape(value) {
     changeShape(value)
 }
 
+function onDownloadCanvas(el) {
+    const dataUrl = gElCanvas.toDataURL()
+    el.href = dataUrl
+}
+
