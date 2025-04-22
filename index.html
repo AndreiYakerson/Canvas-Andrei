@@ -41,9 +41,9 @@
         </canvas>
     </section>
     
-    <div class="upload-container">
-        <label for="upload">Background photo:</label>
-        <input id="upload" type="file" onchange="onImgInput(event)">
+    <div class="upload-container flex">
+        <label class="upload-label" for="upload">Upload image</label>
+        <input id="upload" type="file" onchange="onImgInput(event)" hidden>
     </div>
     <a href="#" onclick="onDownloadCanvas(this)" download="Canvas">Download</a>
 
